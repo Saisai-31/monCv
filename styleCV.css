@@ -1,0 +1,615 @@
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100vh;
+  scroll-behavior: smooth; /* une transition fluide entre la position actuelle et la position de la cible dans la page.*/
+
+}
+
+a{
+  scroll-behavior: smooth;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+body{
+  display: flex;
+  flex-direction: column;
+  background-image: url(images/fondecran.jpg);
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3{
+  font-family: 'Roboto', sans-serif;
+}
+h1{
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+
+
+/*Main*/
+main{
+    flex-grow:1;
+    padding-top: 100px;
+    margin: 20px;
+    
+}
+
+/*Effet Fondu entre section*/
+section {
+  /* opacity: 0; Me fais un petit bug*/
+  transition: opacity 1.3s ease;  /* Ajoute une transition d'opacité pour un effet fondu */
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/*Footer*/
+footer{
+   background-color: rgb(125,78,166);
+    color: white;
+    font-size: 20px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+
+/* Header */
+
+header{
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.navbar{
+  background-color: rgb(125,78,166) !important;
+  display: flex !important;
+  align-items: end !important;
+ 
+}
+
+.container-fluid{
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: end !important;
+  padding-left: 50px;
+  opacity: 2;
+}
+
+.nav-item{
+  padding-left: 50px;
+  opacity: 2;
+}
+
+.active{
+  color: #ffffff !important;
+  font-size: large;
+  padding: 10px;
+  display: block;
+}
+
+.navbar-brand{
+  padding: 5px;
+  opacity: 2;
+}
+.navbar-brand:hover{
+  background-color: black;
+  border-radius: 10px;
+}
+
+.active:hover{
+  background-color: black;
+  border-radius: 10px ;
+}
+
+/* Style pour le lien mis en surbrillance par javascrip dans le menu lors du défilement de la page */
+.navbar-nav .nav-link.highlight {
+  background-color: black !important; 
+  border-radius: 10px;
+}
+
+/*Accueil*/
+#accueil{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  z-index: 1;
+}
+
+.divphoto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.maphoto{
+ border-radius: 50%;
+ border: 5px ridge;
+ margin-bottom: 50px;
+}
+.maphoto:hover {
+  transform: scale(1.2);
+}
+
+.cv{
+  text-decoration: none;
+  border: 5px ridge white;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: rgba(212, 212, 212, 0.702);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+.cv:hover{
+  background-color: #7d4ea6;
+}
+
+.presentation{
+  border-radius: 50px;
+  border: 5px ridge;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 40px;
+
+  width: 55%;
+  background-color: rgb(212, 212, 212, 0.5);
+}
+
+.dwwm{
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+#bonjour{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+#icones{
+  font-size: 1rem;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.ulicone{
+  list-style-type: none;
+  justify-content: center;
+}
+.ulicone li{
+  text-align: center;
+}
+/*Rotation 360 degrés*/
+.rotate-icone{
+  transition: transform 1s ease; /* Ajoute une transition fluide à l'effet de rotation */
+}
+.rotate-icone:hover{
+  transform: rotate(360deg); /* Applique une rotation de 360 degrés au survol */
+}
+
+/*Animation gauche et droite*/
+.divphoto,
+.presentation {
+    opacity: 0; /* Je m'assure que les éléments sont initialement cachés */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition d'opacité et de transformation */
+}
+
+.animate-left {
+    animation: slideFromLeft 2s ease forwards; /* Animation pour apparaître depuis la gauche */
+}
+
+.animate-right {
+    animation: slideFromRight 2s ease forwards; /* Animation pour apparaître depuis la droite */
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-200px); /* Déplacement initial depuis la gauche */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Déplacement final à la position normale */
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(200px); /* Déplacement initial depuis la droite */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Déplacement final à la position normale */
+    }
+}
+
+
+/* Présentation */
+
+#presentation{
+  padding-top: 100px;
+}
+
+.imgpresentation{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.jemepresente{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px outset;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: justify;
+}
+
+/* Compétences */
+#comptetence{
+  padding-top: 100px;
+}
+.competences{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  
+}
+.os{
+  background-color: rgb(212, 212, 212, 0.6);
+  border: 5px outset;
+  border-radius: 20px;
+  width: 400px;
+  padding: 10px;
+}
+.langages{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px outset;
+  border-radius: 20px;
+  width: 400px;
+  padding: 10px;
+}
+.outils{
+  background-color: rgb(212, 212, 212, 0.6);
+  border: 5px outset;
+  border-radius: 20px;
+  width: 400px;
+  padding: 10px;
+}
+.savoirfaire{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px outset;
+  border-radius: 20px;
+  width: 400px;
+  padding: 10px;
+}
+
+
+/* Portfolio */
+
+#portfolio{
+  padding-top: 100px;
+}
+
+.portfolio{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.imgportfolio{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Styles pour le modal (affichage agrandi).
+Modal : Cet élément est utilisé pour créer une fenêtre modale, centrée à l'écran, qui affiche les images agrandies et leurs descriptions.  */
+.modal {
+  position: fixed; /* je fixe la position de l'élément par rapport à la fenêtre du navigateur, indépendamment du défilement de la page. Cela permet de maintenir la fenêtre modale à sa position même si l'utilisateur fait défiler la page.*/
+  top: 50%; /* top et left définissent la position de départ de l'élément à 50% de la hauteur et de la largeur de la fenêtre du navigateur. Cela place l'élément modal au centre de l'écran, mais pas parfaitement centré visuellement.*/
+  left: 50%;
+  transform: translate(-50%, -50%); /*Cette transformation translate déplace l'élément de -50% de sa propre largeur et hauteur, en corrigeant ainsi son positionnement pour le centrer parfaitement. -50% est utilisé pour compenser la moitié de la taille de l'élément, ce qui le replace au centre.*/
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000; /*Cela contrôle l'empilement des éléments. Une valeur de z-index plus élevée permet à l'élément d'apparaître au-dessus des autres éléments avec une valeur z-index plus basse.*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+/*En utilisant max-width et max-height à 80%, je limite la taille maximale de l'image à 80% de la largeur et de la hauteur de l'élément modal, et en utilisant object-fit: contain; je m'assure que l'image reste bien proportionnée et ne sera pas déformée tout en remplissant la boîte définie par ces pourcentages. Cela permet d'afficher une image agrandie, mais contrôlée et adaptée à l'intérieur de la fenêtre modale.*/
+
+.modal p {
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.photographe{
+  text-align: center;
+  background-color: rgb(212, 212, 212, 0.6);
+  border: 5px outset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 30px 10px 30px;
+  border-radius: 20px;
+}
+.photo{
+  max-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+  width: 500px;
+}
+.photo.agrandie {
+  transform: scale(1.5);
+  margin: auto;
+}
+
+
+
+/* Contact */
+
+#contact{
+  padding-top: 100px;
+}
+
+.imgcontact{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.tablecontact{
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 450px;
+  border: 5px outset;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+.tablecontact div{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.monnom{
+  display: flex;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
+
+.adresse{
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.monadresse{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.monadresse .adresse {
+  visibility: hidden; /* Cache le numéro de téléphone par défaut */
+  opacity: 0; /* Cache également le numéro de téléphone */
+  transition: opacity 0.3s ease; /*Ajoute une transition pour une apparition en douceur */
+}
+.monadresse:hover .adresse {
+  visibility: visible; /* Rend le numéro de téléphone visible au survol */
+  opacity: 1; /* Rend le numéro de téléphone complètement visible */
+}
+.montelephone .numeros {
+  visibility: hidden; /* Cache le numéro de téléphone par défaut */
+  opacity: 0; /* Cache également le numéro de téléphone */
+  transition: opacity 0.3s ease; /* Ajoute une transition pour une apparition en douceur */
+}
+.montelephone:hover .numeros {
+  visibility: visible; /* Rend le numéro de téléphone visible au survol */
+  opacity: 1; /* Rend le numéro de téléphone complètement visible */
+}
+
+
+.montelephone{
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 10px;
+}
+.numeros{
+  margin-bottom: 0;
+}
+.monmail{
+  display: flex;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+.gmail{
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
+}
+.mesreseaux{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.mesreseaux a:hover{
+  transform: scale(1.2);
+}
+.linkedin{
+  margin-right: 100px;
+}
+
+
+.formulaire{
+  width: 700px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.formulaire form{
+  border: 5px outset;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+input, textarea{
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+}
+.madame{
+  margin-right: 50px;
+}
+.nom, .email, .telephone, .objet{
+  width: 50%;
+}
+.texte{
+  width: 70%;
+}
+.envoyer{
+  background-color: rgb(125,78,166);
+  color: white;
+}
+.envoyer:hover{
+  box-shadow:5px 5px 5px rgba(0,0,0,0.5);
+}
+.annuler{
+  background-color:#D4BEAC;
+  color: white;
+}
+.annuler:hover{
+  box-shadow:5px 5px 5px rgba(0,0,0,0.5);
+}
+#message{
+  margin: auto;
+  text-align: center;
+  font-size: medium;
+  font-style: italic;
+  font-weight: bold;
+  background-color: bisque;
+  border-radius: 10px;
+  width: 400px;
+}
+
+
+
+/*Media querries*/
+@media screen and (max-width:1340px) {   
+  .tablecontact{
+    margin-bottom: 50px;
+  }
+  .outils{
+    background-color: rgba(255, 255, 255, 0.5);
+  
+  }
+  .savoirfaire{
+    background-color: rgb(212, 212, 212, 0.6);
+  }
+}
+
+@media screen and (max-width:900px) {   
+  .outils{
+    
+    background-color: rgb(212, 212, 212, 0.6);
+  }
+  .savoirfaire{
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media screen and (max-width:800px) {   
+    .presentation{
+      width: 90%;
+      gap: 20px;
+    }
+    .cv{
+      margin-bottom: 50px;
+    }
+    .formulaire{
+      width: 450px;
+    }
+  }
+
+  @media screen and (max-width:600px) {   
+    .photographe img{
+      width: 400px;
+    }
+    .formulaire{
+      width: 300px;
+    }
+    .tablecontact{
+      width: 300px;
+    }
+    .gmail{
+     font-size: 1em;
+    }
+    h1{
+      font-size: 1em;
+    }
+  
+  }
+  @media screen and (max-width:320px) {   
+    .presentation{
+      width: 320px;
+    }
+    h1{
+      font-size: 1em;
+    }
+    
+  }
+
+
+  
