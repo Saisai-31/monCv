@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "openweather";
+$username = "dbu_cyril_openweather";
+$password = "3%E3hcy89bgE264!b4";
+$dbname = "db_cyril_openweather";
 
 // Je crée la connexion à la base de donnée
 $conn = new mysqli($servername, $username, $password, $dbname);
