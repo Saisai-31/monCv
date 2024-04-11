@@ -3,7 +3,7 @@
     function connectDb()
     {
         // Connexion à la base de données
-        $connexion = mysqli_connect("localhost", "root", "", "contact_cv");
+        $connexion = mysqli_connect("localhost", "dbu_cyril_cv", "07?9zjh5M03c7#ewV2", "db_contacts_cyril_cv");
 
         //Je teste que la connexion s'est bien effectué. Dans le cas contraire je recois un message d'erreur.
         if (mysqli_connect_errno()) {
